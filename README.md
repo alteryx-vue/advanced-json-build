@@ -1,2 +1,2 @@
-# advanced-json-build
-A more advanced JSON Build tool
+# json-construct
+An advanced JSON Constructor for Alteryx

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<AlteryxJavaScriptPlugin>
+  <EngineSettings EngineDllEntryPoint="engine.html" EngineDll="HTML" SDKVersion="10.1" />
+  <Properties>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>JSON Construct</Name>
+      <Description>An advanced JSON Constructor for Alteryx</Description>
+      <RootToolName>JSON Construct</RootToolName>
+      <ToolVersion>v0.0.1</ToolVersion>
+      <ToolInDb value="false" />
+      <CategoryName>Developer</CategoryName>
+      <SearchTags>json, construct, build, advanced</SearchTags>
+      <Author>Taylor Cox</Author>
+      <Company>github.com/alteryx-vue</Company>
+      <Copyright/>
+      <DescriptionLink actual="" displayed="" />
+    </MetaInfo>
+  </Properties>
+  <GuiSettings Help="" Html="index.html" Icon="icon.png" SDKVersion="10.1">
+    <InputConnections>
+      <Connection Name="Input" AllowMultiple="False" Optional="False" Type="Connection" Label=""/>
+    </InputConnections>
+    <OutputConnections>
+      <Connection Name="JSON" AllowMultiple="False" Optional="False" Type="Connection" Label=""/>
+    </OutputConnections>
+  </GuiSettings>
+</AlteryxJavaScriptPlugin>
