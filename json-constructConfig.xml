@@ -22,7 +22,7 @@
       <Connection Name="Input" AllowMultiple="False" Optional="False" Type="Connection" Label=""/>
     </InputConnections>
     <OutputConnections>
-      <Connection Name="JSON" AllowMultiple="False" Optional="False" Type="Connection" Label=""/>
+      <Connection Name="Output" AllowMultiple="False" Optional="False" Type="Connection" Label=""/>
     </OutputConnections>
   </GuiSettings>
 </AlteryxJavaScriptPlugin>

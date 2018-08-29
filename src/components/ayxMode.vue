@@ -2,26 +2,20 @@
 
   <div>
 
-    <h3 class="mb-1">
-      <v-icon color="amber">{{ pages[page].icon }}</v-icon>
-      {{ pages[page].name }}
-    </h3>
-
-      <v-alert outline :type="alertType" :value="showAlert" class="mb-3">
-        {{ alertText }}
-      </v-alert>
-
-      <v-radio-group v-model="mode" mandatory="true" class="transparent">
+      <v-radio-group v-model="mode" mandatory="true" hide-details class="transparent mb-0 pt-0">
         <template v-for="opt in modeOptions">
           <v-radio
             :label="opt.label" 
             :value="opt.value" 
-            :key="opt.id" 
-            @change="updateMode()"
-            color="blue darken-1">
+            :key="opt.id"
+            :disabled="opt.disabled"
+            color="orange darken-3"
+            hide-details>
           </v-radio>
         </template>
       </v-radio-group>
+
+      <ayx-examples :mode="mode"></ayx-examples>
 
   </div>
 
@@ -30,20 +24,28 @@
 <script>
 
   import { required } from 'vuelidate/lib/validators'
+  import ayxExamples from './ayxExamples.vue';
 
   export default {
   	name: 'ayxMode',
-    // validations: {
-    //   apiKey: { required }
-    // },
+    components: {
+        ayxExamples
+    },
     data () {
       return {
         loading: false,
-        mode: this.$store.state.ui.mode,
         modeOptions: this.$store.state.config.modeOptions,
       }
     },
     computed: {
+      mode: {
+        get () {
+          return this.$store.state.ui.mode
+        },
+        set (v) {
+          this.$store.commit('updateMode', v)
+        }
+      },
       showAlert() {
         return false
       },
@@ -64,9 +66,6 @@
     methods: {
       moveOn() {
         this.$store.commit('updatePage', 1)
-      },
-      updateMode() {
-          this.$store.commit('updateMode',this.mode)
       }
     }
   }

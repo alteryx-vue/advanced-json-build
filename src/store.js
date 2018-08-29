@@ -22,19 +22,18 @@ export const store = new Vuex.Store({
 			icon: 'icon.png',
 			page: 0,
 			pages: [
-			  { id: 0, name: 'Construction Mode', icon: 'warning' },
-			  { id: 1, name: 'Options', icon: 'settings' },
+			  { id: 0, name: 'Construction Mode', label: 'Mode', icon: 'warning', oppo: 1 },
+			  { id: 1, name: 'Options', label: 'Options', icon: 'settings', oppo: 0},
 			],
 			modeOptions: [
-				{ id: 0, label: 'Single Array', value: 'oneArray'},
-		        { id: 1, label: 'Single Object', value: 'oneObject'},
-		        { id: 2, label: 'Per record Arrays', value: 'manyArrays'},
-		        { id: 3, label: 'Per record Objects', value: 'manyObjects'}
+				{ id: 0, label: 'Per record Objects', value: 'objects', disabled: false},
+				{ id: 1, label: 'Array of Objects', value: 'array', disabled: false},
+		        { id: 2, label: 'Object of Arrays', value: 'object', disabled: false}
 			],
 			inputFields: []
 		},
 		ui: {
-			mode: 'oneArray',
+			mode: 'objects',
 			rootFields: [],
 			preserveFields: false,
 			version: '',
@@ -42,6 +41,9 @@ export const store = new Vuex.Store({
 		}
 	},
 	mutations: {
+	  updateMode (state, v) {
+	  	state.ui.mode = v
+	  },
 	  updateInputFields (state, v) {
 	    state.config.inputFields = v
 	  },

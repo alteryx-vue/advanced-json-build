@@ -2,7 +2,7 @@
 
   <v-app>
 
-    <ayx-toolbar app></ayx-toolbar>
+    <ayx-nav app></ayx-nav>
 
       <v-content>
         <v-container>
@@ -21,14 +21,14 @@
 
 <script>
 
-  import ayxToolbar from './components/ayxToolbar.vue';
+  import ayxNav from './components/ayxNav.vue';
   import ayxMode from './components/ayxMode.vue';
   import ayxOptions from './components/ayxOptions.vue';
   import ayxUpdate from './components/ayxUpdate.vue';
 
   export default {
     components: {
-        ayxToolbar,
+        ayxNav,
         ayxMode,
         ayxOptions,
         ayxUpdate
